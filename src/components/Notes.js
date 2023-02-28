@@ -22,17 +22,17 @@ const Notes = () => {
      const token  = localStorage.getItem('token');
     if(token){
       getNote(token);
-<<<<<<< HEAD
+
     
     }
     else{
     
-=======
+
      console.log('hey')
     }
     else{
      console.log('baby')
->>>>>>> 38e0a4cd97a6bf16715862ec9957c723580fddda
+
    
     navigate("/login");
     
