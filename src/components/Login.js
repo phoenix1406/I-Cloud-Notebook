@@ -1,12 +1,12 @@
 
 import React from 'react';
 import {GoogleLogin, GoogleOAuthProvider} from '@react-oauth/google';
-import ReactDOM from 'react-dom';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import noteContext from '../context/NoteContext';
 import { useContext } from 'react';
-import icon from './icon';
+
 // import {useDispatch} from 'react-redux';
 
 
