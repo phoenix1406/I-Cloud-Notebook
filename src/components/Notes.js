@@ -25,13 +25,9 @@ const Notes = () => {
 
     
     }
+   
     else{
-    
-
-     console.log('hey')
-    }
-    else{
-     console.log('baby')
+  
 
    
     navigate("/login");
