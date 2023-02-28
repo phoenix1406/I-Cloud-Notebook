@@ -114,7 +114,7 @@ let navigate = useNavigate();
  
   <button type="submit" className="btn btn-primary" >Submit</button>
 </form>
-<<<<<<< HEAD
+
 <div style ={{marginTop:'10px'}}>
 <GoogleOAuthProvider clientId="988940801897-mrdr05rrn119oil8o7ru1e78behf4acb.apps.googleusercontent.com">
 <GoogleLogin
