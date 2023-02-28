@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from 'react';
 import {GoogleLogin, GoogleOAuthProvider} from '@react-oauth/google';
 import ReactDOM from 'react-dom';
@@ -8,21 +8,21 @@ import noteContext from '../context/NoteContext';
 import { useContext } from 'react';
 import icon from './icon';
 // import {useDispatch} from 'react-redux';
-=======
+
 import React from 'react'
 
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import noteContext from '../context/NoteContext';
 import { useContext } from 'react';
->>>>>>> 38e0a4cd97a6bf16715862ec9957c723580fddda
+
 
 
 const Login = () => {
   const context = useContext(noteContext);
   const {showAlert} = context;
 const [credentials,setCredentials]  =useState({email:"",password:""});
-<<<<<<< HEAD
+
 const [pass,setPass] = useState('password');
 let navigate = useNavigate();
 // const dispatch = useDispatch();
@@ -38,9 +38,9 @@ let navigate = useNavigate();
     setPass('password');
   }
  }
-=======
+
 let navigate = useNavigate();
->>>>>>> 38e0a4cd97a6bf16715862ec9957c723580fddda
+
     const handleSubmit= async(e)=>{
         e.preventDefault();
         const response  = await fetch('http://localhost:5000/api/auth/login',
@@ -57,26 +57,21 @@ let navigate = useNavigate();
         if(json.success){
             localStorage.setItem('token',json.auth_token);
             showAlert("User logged in successfully !","success");
-<<<<<<< HEAD
+
             setCredentials({email:"",password:""});
-=======
->>>>>>> 38e0a4cd97a6bf16715862ec9957c723580fddda
+
             navigate("/")
            
         }
         else{
            showAlert("Invalid Credentials","danger")
         }
-<<<<<<< HEAD
-     
-=======
->>>>>>> 38e0a4cd97a6bf16715862ec9957c723580fddda
+
 
     }
     const onchange =(e)=>{
         setCredentials({...credentials,[e.target.name]:e.target.value});
     } 
-<<<<<<< HEAD
 
     const googleSuccess =  async(res)=>{
       console.log(res);
@@ -95,8 +90,7 @@ let navigate = useNavigate();
       console.log('Google Sign In was unsuccessful!, Try Again Later!');
     }
   
-=======
->>>>>>> 38e0a4cd97a6bf16715862ec9957c723580fddda
+
     
   return (
     <>
@@ -106,22 +100,22 @@ let navigate = useNavigate();
     <form onSubmit={handleSubmit}>
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-<<<<<<< HEAD
+
     <input type="email" className="form-control" id="email" name='email' onChange={onchange} aria-describedby="emailHelp" value={credentials.email}/>
-=======
+
     <input type="email" className="form-control" id="email" name='email' onChange={onchange} aria-describedby="emailHelp"/>
->>>>>>> 38e0a4cd97a6bf16715862ec9957c723580fddda
+
     
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-<<<<<<< HEAD
+
     <div className="d-flex" style={{justifyContent:'space-between'}}>
     <input type={pass} className="form-control" id="password" name='password'  autoComplete ="on" onChange={onchange} value={credentials.password} />
     <i className="fa-solid fa-eye" onClick ={handleEye} style={{lineHeight:'35px',marginLeft:'-40px'}}></i></div>
-=======
+
     <input type="password" className="form-control" id="password" name='password'  autoComplete ="on" onChange={onchange}/>
->>>>>>> 38e0a4cd97a6bf16715862ec9957c723580fddda
+
   </div>
  
   <button type="submit" className="btn btn-primary" >Submit</button>
@@ -152,8 +146,8 @@ let navigate = useNavigate();
      onFailure= {googleFailure}
      cookiePolicy={'single_host_origin'}
      /> */}
-=======
->>>>>>> 38e0a4cd97a6bf16715862ec9957c723580fddda
+
+
     </div>
     </div>
     </>
