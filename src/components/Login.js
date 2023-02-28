@@ -33,7 +33,7 @@ let navigate = useNavigate();
   }
  }
 
-let navigate = useNavigate();
+
 
     const handleSubmit= async(e)=>{
         e.preventDefault();
