@@ -29,7 +29,7 @@ const AddNotes = () => {
     <>
     <div>
       <div className='container my-3'>
-      <h2> Add a Note</h2>
+      <h2> Add a Task</h2>
     </div>
 
     <form className='container my-2'>
@@ -50,7 +50,7 @@ const AddNotes = () => {
   <button disabled={note.title.length<3 | note.description.length<5} type="submit" className="btn btn-primary" onClick = {handleClick}>Create Note</button>
 </form>
   <div className="container my-3" >
-    <h2 style = {{textAlign:'center'}}>Your Notes</h2>
+    <h2 style = {{textAlign:'center'}}>Your Task</h2>
     </div>
     </div>
     </>
