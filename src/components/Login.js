@@ -1,18 +1,22 @@
+
 import React from 'react';
-// import {GoogleLogin, GoogleOAuthProvider} from '@react-oauth/google';
-// import ReactDOM from 'react-dom';
+import {GoogleLogin, GoogleOAuthProvider} from '@react-oauth/google';
+import ReactDOM from 'react-dom';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import noteContext from '../context/NoteContext';
 import { useContext } from 'react';
-// import icon from './icon';
+import icon from './icon';
 // import {useDispatch} from 'react-redux';
+
+
 
 
 const Login = () => {
   const context = useContext(noteContext);
   const {showAlert} = context;
 const [credentials,setCredentials]  =useState({email:"",password:""});
+
 const [pass,setPass] = useState('password');
 let navigate = useNavigate();
 // const dispatch = useDispatch();
@@ -28,6 +32,9 @@ let navigate = useNavigate();
     setPass('password');
   }
  }
+
+
+
     const handleSubmit= async(e)=>{
         e.preventDefault();
         const response  = await fetch('http://localhost:5000/api/auth/login',
@@ -44,14 +51,16 @@ let navigate = useNavigate();
         if(json.success){
             localStorage.setItem('token',json.auth_token);
             showAlert("User logged in successfully !","success");
+
             setCredentials({email:"",password:""});
+
             navigate("/")
            
         }
         else{
            showAlert("Invalid Credentials","danger")
         }
-     
+
 
     }
     const onchange =(e)=>{
@@ -75,6 +84,7 @@ let navigate = useNavigate();
       console.log('Google Sign In was unsuccessful!, Try Again Later!');
     }
   
+
     
   return (
     <>
@@ -84,19 +94,27 @@ let navigate = useNavigate();
     <form onSubmit={handleSubmit}>
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+
     <input type="email" className="form-control" id="email" name='email' onChange={onchange} aria-describedby="emailHelp" value={credentials.email}/>
+
+    <input type="email" className="form-control" id="email" name='email' onChange={onchange} aria-describedby="emailHelp"/>
+
     
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+
     <div className="d-flex" style={{justifyContent:'space-between'}}>
     <input type={pass} className="form-control" id="password" name='password'  autoComplete ="on" onChange={onchange} value={credentials.password} />
     <i className="fa-solid fa-eye" onClick ={handleEye} style={{lineHeight:'35px',marginLeft:'-40px'}}></i></div>
+
+    <input type="password" className="form-control" id="password" name='password'  autoComplete ="on" onChange={onchange}/>
+
   </div>
  
   <button type="submit" className="btn btn-primary" >Submit</button>
 </form>
-{/* <div style ={{marginTop:'10px'}}>
+<div style ={{marginTop:'10px'}}>
 <GoogleOAuthProvider clientId="988940801897-mrdr05rrn119oil8o7ru1e78behf4acb.apps.googleusercontent.com">
 <GoogleLogin
   // onSuccess={credentialResponse => {
@@ -121,6 +139,8 @@ let navigate = useNavigate();
      onFailure= {googleFailure}
      cookiePolicy={'single_host_origin'}
      /> */}
+
+
     </div>
     </div>
     </>

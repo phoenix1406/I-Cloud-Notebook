@@ -22,10 +22,13 @@ const Notes = () => {
      const token  = localStorage.getItem('token');
     if(token){
       getNote(token);
+
     
     }
+   
     else{
-    
+  
+
    
     navigate("/login");
     

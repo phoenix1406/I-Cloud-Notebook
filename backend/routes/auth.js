@@ -43,12 +43,20 @@ router.post('/createUser',[
      id:user.id
     }
  }
+<<<<<<< HEAD
  const auth_token = jwt.sign(data,jwt_secret);
+=======
+ const authtoken = jwt.sign(data,jwt_secret);
+>>>>>>> 38e0a4cd97a6bf16715862ec9957c723580fddda
 // .then((user)=>res.json(user))
 //     .catch((err)=>res.json({error: 'please enter a unique email',message:err.message}))
     //  res.json(user);
     success = true;
+<<<<<<< HEAD
     res.json({auth_token,success});  // authtoken generated and return to user
+=======
+    res.json({authtoken,success});  // authtoken generated and return to user
+>>>>>>> 38e0a4cd97a6bf16715862ec9957c723580fddda
 
 }catch(err){
     console.log(err.message);
