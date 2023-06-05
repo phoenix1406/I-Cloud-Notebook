@@ -1,12 +1,12 @@
 
 import React from 'react';
-import {GoogleLogin, GoogleOAuthProvider} from '@react-oauth/google';
-import ReactDOM from 'react-dom';
+
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import noteContext from '../context/NoteContext';
 import { useContext } from 'react';
-import icon from './icon';
+
 // import {useDispatch} from 'react-redux';
 
 
@@ -67,23 +67,7 @@ let navigate = useNavigate();
         setCredentials({...credentials,[e.target.name]:e.target.value});
     } 
 
-    const googleSuccess =  async(res)=>{
-      console.log(res);
-      console.log('User login successful')
-      const result = res.profileObj;
-      const token = res.tokenId;
-      console.log(result,token);
-      // try {
-      //   dispatch({type:'AUTH',data:{result,token}})
-      // } catch (error) {
-      //   console.log(error); 
-      // }
-    }
-    const googleFailure= async(err)=>{
-      console.log(err);
-      console.log('Google Sign In was unsuccessful!, Try Again Later!');
-    }
-  
+
 
     
   return (
@@ -97,8 +81,7 @@ let navigate = useNavigate();
 
     <input type="email" className="form-control" id="email" name='email' onChange={onchange} aria-describedby="emailHelp" value={credentials.email}/>
 
-    <input type="email" className="form-control" id="email" name='email' onChange={onchange} aria-describedby="emailHelp"/>
-
+   
     
   </div>
   <div className="mb-3">
@@ -108,37 +91,14 @@ let navigate = useNavigate();
     <input type={pass} className="form-control" id="password" name='password'  autoComplete ="on" onChange={onchange} value={credentials.password} />
     <i className="fa-solid fa-eye" onClick ={handleEye} style={{lineHeight:'35px',marginLeft:'-40px'}}></i></div>
 
-    <input type="password" className="form-control" id="password" name='password'  autoComplete ="on" onChange={onchange}/>
+  
 
   </div>
  
   <button type="submit" className="btn btn-primary" >Submit</button>
 </form>
-<div style ={{marginTop:'10px'}}>
-<GoogleOAuthProvider clientId="988940801897-mrdr05rrn119oil8o7ru1e78behf4acb.apps.googleusercontent.com">
-<GoogleLogin
-  // onSuccess={credentialResponse => {
-  //   console.log(credentialResponse);
-  // }}
-    onSuccess={googleSuccess}
-    onFailure = {googleFailure} 
-  // onError={() => {
-  //   console.log('Login Failed');
-  // }}
-/>
-</GoogleOAuthProvider>
-</div> */}
 
- {/* <GoogleLogin
-    clientId="988940801897-mrdr05rrn119oil8o7ru1e78behf4acb.apps.googleusercontent.com"
-    render={(renderProps)=>(
-    <button className='btn btn-primary' style={{cursor:'pointer',color:'black',borderRadius:'5px',backgroundColor:'lightBlue',margin:'10px auto',padding:'2px',outline:'none',display:'block',width:'100%'}} color ='primary' fullWidth onClick={renderProps.onClick} disabled ={renderProps.disabled} startIcon ={icon} variant ="contained">Sign In With Google</button>
-    
-     )} 
-     onSuccess = {googleSuccess}
-     onFailure= {googleFailure}
-     cookiePolicy={'single_host_origin'}
-     /> */}
+
 
 
     </div>
