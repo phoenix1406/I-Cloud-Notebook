@@ -124,7 +124,7 @@ const Notes = () => {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="Tag" className="form-label">
-                    Tag
+                    Status
                   </label>
                   <input
                     type="text"

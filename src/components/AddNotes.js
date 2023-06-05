@@ -43,7 +43,7 @@ const AddNotes = () => {
     <input type="text" className="form-control" id="description" value ={note.description}name="description" onChange={handleChange}/>
   </div>
   <div className="mb-3">
-    <label htmlFor="Tag" className="form-label">Tag</label>
+    <label htmlFor="Tag" className="form-label">Status</label>
     <input type="text" className="form-control" id="tag" value ={note.tag} name="tag" onChange={handleChange}/>
   </div>
   

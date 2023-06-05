@@ -19,7 +19,7 @@ const NoteItem = (props) => {
     return (
     <>
 <div className='col-md-3'>
-<div className="card my-2" >
+<div className="card my-2">
  
   <div className="card-body">
     <div className="d-flex align-items-center">
@@ -32,12 +32,13 @@ const NoteItem = (props) => {
     </div>
    
     <p className="card-text">{note.description}</p>
+    <h6 className="card-subtitle mt-3">{note.tag}</h6>
    
   </div>
 </div>
       </div>
 </>
-  )
+  ) 
 }
 
 export default NoteItem

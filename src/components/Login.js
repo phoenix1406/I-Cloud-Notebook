@@ -1,11 +1,11 @@
 import React from 'react';
-import {GoogleLogin, GoogleOAuthProvider} from '@react-oauth/google';
-import ReactDOM from 'react-dom';
+// import {GoogleLogin, GoogleOAuthProvider} from '@react-oauth/google';
+// import ReactDOM from 'react-dom';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import noteContext from '../context/NoteContext';
 import { useContext } from 'react';
-import icon from './icon';
+// import icon from './icon';
 // import {useDispatch} from 'react-redux';
 
 
@@ -96,7 +96,7 @@ let navigate = useNavigate();
  
   <button type="submit" className="btn btn-primary" >Submit</button>
 </form>
-<div style ={{marginTop:'10px'}}>
+{/* <div style ={{marginTop:'10px'}}>
 <GoogleOAuthProvider clientId="988940801897-mrdr05rrn119oil8o7ru1e78behf4acb.apps.googleusercontent.com">
 <GoogleLogin
   // onSuccess={credentialResponse => {
@@ -109,7 +109,7 @@ let navigate = useNavigate();
   // }}
 />
 </GoogleOAuthProvider>
-</div>
+</div> */}
 
  {/* <GoogleLogin
     clientId="988940801897-mrdr05rrn119oil8o7ru1e78behf4acb.apps.googleusercontent.com"
